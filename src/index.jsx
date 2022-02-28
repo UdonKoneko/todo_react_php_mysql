@@ -1,3 +1,14 @@
+// タスク登録
+function Register() {
+    return (
+        <form>
+            <input type="text" name="task"></input>
+            <button type="submit">登録</button>
+        </form>
+    );
+}
+
+// タスクリスト部分
 function Todo() {
     return (
         <table>
@@ -15,6 +26,7 @@ function Todo() {
 function App() {
     return (
         <div className="container">
+            <Register />
             <Todo />
         </div>
     );
