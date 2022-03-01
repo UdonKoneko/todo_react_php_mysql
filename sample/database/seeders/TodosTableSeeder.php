@@ -15,7 +15,7 @@ class TodosTableSeeder extends Seeder
     public function run()
     {
         // テーブルのクリア
-        DB::table('todos')->truncate();
+        // DB::table('todos')->truncate();
 
         // 初期データ用意（列名をキーとする連想配列）
         $todos = [
@@ -30,7 +30,7 @@ class TodosTableSeeder extends Seeder
         ];
 
         foreach ($todos as $todo) {
-            \App\Todo::create($todo);
+            \App\Models\Todo::create($todo);
         }
     }
 }
