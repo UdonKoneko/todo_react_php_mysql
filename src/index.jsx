@@ -15,9 +15,9 @@ function Todo() {
             <tr>
             <th>ID</th>
             <th>タスク名</th>
+            <th>ステータス</th>
             <th>登録日時</th>
             <th>更新日時</th>
-            <th>完了日時</th>
             </tr>
         </table>
     );
