@@ -10,6 +10,20 @@ TODO アプリの作成
 - PHP
 - MySQL
 
+### Laravel コマンド
+
+Laravel 起動
+
+```
+$ php artisan serve
+```
+
+tinker
+
+```
+$ php artisan tinker
+```
+
 ### DB
 
 #### todos
