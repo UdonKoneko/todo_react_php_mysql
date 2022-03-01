@@ -26,14 +26,17 @@
                 <th>ステータス</th>
                 <th>登録日時</th>
                 <th>更新日時</th>
+                <th>削除日時</th>
             </tr>
             @foreach($todos as $todo)
-            <td>{{ $todo->id }}</td>
-            <td>{{ $todo->task }}</td>
-            <td>{{ $todo->status }}</td>
-            <td>{{ $todo->updated_at }}</td>
-            <td>{{ $todo->created_at }}</td>
-            <td>{{ $todo->deleted_at }}</td>
+            <tr>
+                <td>{{ $todo->id }}</td>
+                <td>{{ $todo->task }}</td>
+                <td>{{ $todo->status }}</td>
+                <td>{{ $todo->updated_at }}</td>
+                <td>{{ $todo->created_at }}</td>
+                <td>{{ $todo->deleted_at }}</td>
+            </tr>
             @endforeach
         </table>
     </div>
