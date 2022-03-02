@@ -29,4 +29,17 @@ class TodoController extends Controller
 
         return redirect("/todo");
     }
+
+    /**
+     * タスクの削除
+     *
+     * @id int タスクのid
+     */
+    public function destroy($id)
+    {
+        $todo = \App\Models\Todo::findOrFail($id);
+        $todo->delete();
+
+        return redirect("/todo");
+    }
 }

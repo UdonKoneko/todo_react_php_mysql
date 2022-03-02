@@ -27,7 +27,7 @@
                 <th>ステータス</th>
                 <th>登録日時</th>
                 <th>更新日時</th>
-                <th>削除日時</th>
+                <th>削除</th>
             </tr>
             @foreach($todos as $todo)
             <tr>
@@ -36,7 +36,13 @@
                 <td>{{ $todo->status }}</td>
                 <td>{{ $todo->updated_at }}</td>
                 <td>{{ $todo->created_at }}</td>
-                <td>{{ $todo->deleted_at }}</td>
+                <td>
+                    <form action="/todo/{{ $todo->id }}" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit">削除</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </table>
