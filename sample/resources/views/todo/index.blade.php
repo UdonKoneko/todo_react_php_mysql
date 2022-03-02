@@ -12,6 +12,8 @@
 ></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
 <!-- <script src="./index2.jsx" type="text/babel"></script> -->
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <form action="/todo" method="post">
@@ -33,7 +35,13 @@
             <tr>
                 <td>{{ $todo->id }}</td>
                 <td>{{ $todo->task }}</td>
-                <td>{{ $todo->status }}</td>
+                <td>
+                    @if($todo->status == 0)
+                    <i class="fa-solid fa-check color-gray"></i>
+                    @elseif($todo->status == 1)
+                    <i class="fa-solid fa-check color-green"></i>
+                    @endif
+                </td>
                 <td>{{ $todo->updated_at }}</td>
                 <td>{{ $todo->created_at }}</td>
                 <td>
