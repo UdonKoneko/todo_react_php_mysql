@@ -19,4 +19,14 @@ class TodoController extends Controller
         $todo = Todo::findOrFail($id);
         return view('todo/edit', compact('todo'));
     }
+
+    public function store(Request $request)
+    {
+        $todo         = new \App\Models\Todo();
+        $todo->task   = $request->task;
+        $todo->status = 0;
+        $todo->save();
+
+        return redirect("/todo");
+    }
 }

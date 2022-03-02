@@ -14,8 +14,9 @@
 <!-- <script src="./index2.jsx" type="text/babel"></script> -->
 </head>
 <body>
-    <form>
+    <form action="/todo" method="post">
         <input type="text" name="task"></input>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <button type="submit">登録</button>
     </form>    
     <div id="todos">
