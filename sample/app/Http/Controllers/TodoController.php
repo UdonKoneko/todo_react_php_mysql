@@ -29,8 +29,13 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $todo       = \App\Models\Todo::findOrFail($id);
-        $todo->task = $request->task;
+        $todo = \App\Models\Todo::findOrFail($id);
+        if (isset($request->task)) {
+            $todo->task = $request->task;
+        }
+        if (isset($request->status)) {
+            $todo->status = $request->status == 1 ? 0 : 1;
+        }
         $todo->save();
 
         return redirect("/todo");

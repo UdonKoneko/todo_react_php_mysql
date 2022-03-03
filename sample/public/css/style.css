@@ -12,7 +12,10 @@
     color: green;
 }
 
-#todo-status {
+.button_icon {
+    background-color: white;
+    border: none;
+    padding: 0;
     cursor: pointer;
 }
 
