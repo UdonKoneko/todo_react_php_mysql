@@ -11,3 +11,13 @@
 .color-green {
     color: green;
 }
+
+#todo-status {
+    cursor: pointer;
+}
+
+#task_edit {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}

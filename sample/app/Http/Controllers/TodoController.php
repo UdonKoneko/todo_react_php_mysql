@@ -14,10 +14,26 @@ class TodoController extends Controller
         return view('todo/index', compact('todos'));
     }
 
+    /**
+     * 編集画面の表示
+     */
     public function edit($id)
     {
-        $todo = Todo::findOrFail($id);
-        return view('todo/edit', compact('todo'));
+        $todos = \App\Models\Todo::all();
+        $todo  = \App\Models\Todo::findOrFail($id);
+        return view('todo/edit', compact('todos', 'todo'));
+    }
+
+    /**
+     * 編集
+     */
+    public function update(Request $request, $id)
+    {
+        $todo       = \App\Models\Todo::findOrFail($id);
+        $todo->task = $request->task;
+        $todo->save();
+
+        return redirect("/todo");
     }
 
     public function store(Request $request)
